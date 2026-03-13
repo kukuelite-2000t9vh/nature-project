@@ -1,0 +1,61 @@
+/* ── Reset & base ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ── Canvas fills the viewport ─────────────────────────── */
+#natureCanvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ── UI overlay ─────────────────────────────────────────── */
+#ui {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#controls {
+  display: flex;
+  gap: 8px;
+  pointer-events: all;
+}
+
+#controls button {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 24px;
+  color: #fff;
+  font-size: 13px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+#controls button:hover  { background: rgba(255,255,255,0.32); }
+#controls button:active { transform: scale(0.95); }
+#controls button.active { background: rgba(255,255,255,0.45); }
+
+#clock {
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  letter-spacing: 0.04em;
+}
